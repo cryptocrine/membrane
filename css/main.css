@@ -12,7 +12,7 @@ body {
   height            : 100%;
   width             : 100%;
   background        : rgba( 145, 145, 145, 1 );
-  background-image  : url('cold-1428277.jpg');
+  background-image  : url('../cold-1428277.jpg');
   background-size   : cover;
   background-attachment: fixed !important;
   overflow          : hidden;
