@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html><meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <head><title>membrane</title>
+  <link rel='icon' type='image/png' href='./resources/icon.png' />
+  <link href="https://fonts.googleapis.com/css?family=Karla|Montserrat:200|Raleway:300" rel="stylesheet">
+  
+  <link rel='stylesheet' type='text/css' href='css/index.css' />
+  <link rel='stylesheet' type='text/css' href='css/close-button.css' />
+  <link rel='stylesheet' type='text/css' href='css/dodecahedron.css' />
+  <link rel='stylesheet' type='text/css' href='css/main.css' />
+  <link rel='stylesheet' type='text/css' href='https://code.jquery.com/ui/1.12.1/themes/pepper-grinder/jquery-ui.css' />
+
+  <script
+   src="https://code.jquery.com/jquery-3.3.1.min.js"
+   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+   crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/calculation.js"></script>
+  <script src="js/ux.js"></script>
+  <style>
+  </style>
+  </head>
+  <body>
+    <div id="settings">
+      <div id="settings-background"></div>
+      <div id="settings-content">
+        <div id="start-date" class="settings-item"><div class="label">Starting Date:</div><input type='text' id='input-start' class="input"></div>
+        <div id="stop-date"  class="settings-item"><div class="label">Completion Date:</div><input type='text' id='input-stop' class="input"></div>
+        <div id="goal"       class="settings-item"><div class="label">Goal:</div><input type='text' id='input-goal' class="input"></div>
+      </div>
+      <div id="portal">
+        <button id="btn"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div id="timely"></div>
+    <div id="quote"></div>
+    <div id="author"></div>
+
+  </body>
+  <script>
+  log   = console.log
+  
+  
+  $(document).ready(function() {
+    loadData()
+    
+    manageCalendar()
+    manageGoal()
+    
+    var u = calculate()
+    renderTimely(u.len, u.tlen)
+    
+    behavioursUI()
+  })
+  
+  
+ 
+  // https://www.pexels.com/photo/starry-sky-over-mountains-2469122/
+  
+  // https://www.pexels.com/photo/landscape-photography-of-rocky-mountain-1303502/
+  // https://www.pexels.com/photo/silhouette-of-trees-2058946/
+  // https://www.pexels.com/photo/brown-wooden-surface-218535/
+  // https://www.pexels.com/photo/apartment-architectural-architecture-atrium-273669/
+  // https://www.pexels.com/photo/photo-of-dark-green-leaves-2470967/
+  // https://www.pexels.com/photo/photo-of-man-wearing-gray-shirt-near-sea-709143/
+  // https://www.pexels.com/photo/calm-body-of-water-1477836/
+  // https://www.pexels.com/photo/low-angle-photography-of-rock-mountain-1387001/
+  // https://www.pexels.com/photo/photo-of-tall-trees-covered-with-fog-2431375/
+  // https://www.pexels.com/photo/active-blowing-bubbles-child-344060/
+  // https://www.pexels.com/photo/person-standing-on-manhole-cover-1266445/
+  // https://www.pexels.com/photo/photo-of-mountain-1386993/
+  // https://www.pexels.com/photo/photography-of-sailboat-on-sea-1266218/
+  // https://www.pexels.com/photo/girl-wearing-white-and-black-striped-long-sleeved-shirt-jumping-outdoor-1848662/
+  // https://www.pexels.com/photo/sunset-man-summer-lake-57687/
+  // https://www.pexels.com/photo/snow-covered-mountain-1428277/
+  // https://www.pexels.com/photo/landscape-photography-of-house-near-woods-and-calm-body-of-water-1612353/
+  // https://www.pexels.com/photo/body-of-water-1462011/
+  // https://www.pexels.com/photo/bird-s-eye-view-photography-of-city-1482778/
+  
+  // https://codepen.io/JeromeRenders/pen/GqjxVL
+ 
+  </script>
+</html>
