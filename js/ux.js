@@ -14,6 +14,11 @@ addDays = function(r, days) { return r.setDate(r.getDate() + parseInt(days)) }
 days    = [ 'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
 months  = [ 'January','February','March','April','May','June','July','August','September','October','November','December']
 
+measure = function() {
+ var w = window.innerWidth
+ return (w < 420) ? 2 : (w < 768) ? 1 : 0
+}
+
 renderTimely = function(len, tlen) {
   var d = ''
   var border = options.borderStyle
