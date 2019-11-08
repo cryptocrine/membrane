@@ -67,6 +67,7 @@ body.small #main {
   font-family    : 'Montserrat';
   font-size      : 15pt;
   color          : rgba( 89, 89, 89, 1 );
+  text-shadow    : 0 0 6px rgba( 255, 255, 255, 0.23 );
   line-height    : 43px;
   width          : 210px;
   display        : inline-block;
@@ -77,6 +78,7 @@ body.small #main {
   font-size      : 15pt;
   
   color          : rgba( 89, 89, 89, 1 );
+  text-shadow    : 0 0 6px rgba( 255, 255, 255, 0.23 );
   width          : 115px;
   line-height    : 37px;
   background     : none;
