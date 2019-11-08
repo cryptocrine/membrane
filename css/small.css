@@ -7,7 +7,7 @@ body.small::before {
   min-height        : 100%;
   background-image  : url('../astronomy-2469122.jpg');
   background-size   : cover;
-  filter            : blur(6px) saturate(40%);
+  /* filter            : blur(6px) saturate(40%); */
 }
 
 body.small #main {
@@ -16,9 +16,6 @@ body.small #main {
 }
 
 #main.small {
-  position          : absolute;
-  top               : 0%;
-  left              : 0%;
   height            : 100%;
   width             : 100%;
   max-width         : 420px;
