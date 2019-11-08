@@ -16,12 +16,14 @@ body.small #main {
 }
 
 #main.small {
+  position          : absolute;
+  top               : 0%;
+  left              : 0%;
   height            : 100%;
   width             : 100%;
   max-width         : 420px;
   border : 1px solid rgba( 255, 1, 1, 0);
 }
-
 
 #settings.small {
   z-index        : 25;
