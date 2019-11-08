@@ -16,7 +16,7 @@ months  = [ 'January','February','March','April','May','June','July','August','S
 
 measure = function() {
  var w = window.innerWidth
- return (w < 420) ? 2 : (w < 768) ? 1 : 0
+ return (w < 420) ? 2 : (w < 768) ? 2 : 0
 }
 
 renderTimely = function(len, tlen) {
