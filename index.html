@@ -42,6 +42,8 @@
   
   
   $(document).ready(function() {
+    resize()
+   
     loadData()
     
     manageCalendar()
@@ -53,6 +55,21 @@
     behavioursUI()
   })
   
+  
+  resize = function() {
+    var sizeType = sizeType || measure() || 0
+    sizeType = 1
+    switch(sizeType) {
+      case 2:
+        break;
+      case 1:
+        $('#main').addClass('midsize')
+        break;
+      case 0:
+      default:
+        break;
+    }
+  }
   
  
   // https://www.pexels.com/photo/starry-sky-over-mountains-2469122/
