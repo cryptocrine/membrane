@@ -8,6 +8,9 @@
 }
 
 /* Main Body */
+html {
+  height            : 100%;
+}
 body {
   height            : 100%;
   width             : 100%;
@@ -17,6 +20,25 @@ body {
   background-attachment: fixed !important;
   overflow          : hidden;
   margin            : 0px;
+}
+#main {
+  position          : absolute;
+  height            : 100%;
+  width             : 100%;
+  left              : 50%;
+  top               : 50%;
+  transform         : translate(-50%, -50%);
+  margin            : 0px;
+}
+#main.midsize {
+  height            : 100%;
+  width             : 728px;
+  border : 1px solid rgba( 255, 1, 1, 1);
+}
+#main.smallsize {
+  height            : 100%;
+  width             : 420px;
+  border : 1px solid rgba( 255, 1, 1, 1);
 }
 
 /* Boxes */
