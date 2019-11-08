@@ -25,9 +25,16 @@ renderTimely = function(len, tlen) {
   var rEdge = 0
   var tEdge = 0
   var weekend = false
+  var wrap  = options.wrap
+  var left  = options.leftOffset
+  
+  if (sizeType && sizeType == 2) {
+    wrap = 7
+    left = 24
+  }
   for (var i = 0; i < len.days; i++) {
-    var L = (i % options.wrap) * (options.width + options.separation) + options.leftOffset
-    var T = Math.floor( i / options.wrap) * (options.width + options.separation) + options.topOffset
+    var L = (i % wrap) * (options.width + options.separation) + left
+    var T = Math.floor( i / wrap) * (options.width + options.separation) + options.topOffset
     var passed = false
     d += '<div id="box-' + i + '" class="box '
     
@@ -44,23 +51,23 @@ renderTimely = function(len, tlen) {
     d += '" data="' + i + '" style="left: ' + L + 'px; top: ' + T + 'px;'
     
     // Movement
-    if (rEdge == 0 && i % options.wrap == (options.wrap - 1)) { rEdge = 1 }
-    if (tEdge == 0 && Math.floor(i / options.wrap) < 1) { tEdge = T }
+    if (rEdge == 0 && i % wrap == (wrap - 1)) { rEdge = 1 }
+    if (tEdge == 0 && Math.floor(i / wrap) < 1) { tEdge = T }
     
     // Borders for the collective
     if (!weekend) {
-    if (Math.floor(i / options.wrap) == 0) {
+    if (Math.floor(i / wrap) == 0) {
         d += 'border-top: ' + border }
-    if (i % options.wrap == 0) {
+    if (i % wrap == 0) {
         d += 'border-left: ' + border }
-    if (i % options.wrap == (options.wrap - 1)) {
+    if (i % wrap == (wrap - 1)) {
         d += 'border-right: ' + border }
     if ((i + 1) == len.days) {
         d += 'border-right: ' + border }
-    if (i / options.wrap >= Math.floor(len.days / options.wrap)) {
+    if (i / wrap >= Math.floor(len.days / wrap)) {
         d += 'border-bottom: ' + border }
-    var LR = options.wrap - len.days % options.wrap
-    if ((i + LR) / options.wrap >= Math.floor(len.days / options.wrap)) {
+    var LR = wrap - len.days % wrap
+    if ((i + LR) / wrap >= Math.floor(len.days / wrap)) {
         d += 'border-bottom: ' + border }
     }
    
@@ -129,10 +136,19 @@ behavioursUI = function() {
   document.getElementById('btn').addEventListener('click', function() {
    if (this.className == 'on') {
        this.classList.remove('on')
-       $('#settings-content').css('right','-100%')
+       if ($('#settings-content').hasClass('small')) {
+         $('#settings-content').css('top','100%')
+       } else {
+         $('#settings-content').css('right','-100%')
+       }
    } else {
        this.classList.add('on')
-       $('#settings-content').css('right','0%')
+       if ($('#settings-content').hasClass('small')) {
+         $('#settings-content').css('top','calc(100% - 40%)')
+         
+       } else {
+         $('#settings-content').css('right','0%')
+       }
    }
   })
 }
