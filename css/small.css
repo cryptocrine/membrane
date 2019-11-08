@@ -1,0 +1,89 @@
+
+body.small::before {
+  content           : "";
+  position          : absolute;
+  width             : 100%;
+  height            : 100%;
+  min-height        : 100%;
+  background-image  : url('../resources/screens/astronomy-2469122.jpg');
+  background-size   : cover;
+  filter            : blur(6px) saturate(40%);
+}
+
+body.small #main {
+  background-image  : url('../resources/screens/astronomy-2469122.jpg');
+  background-size   : cover;
+}
+
+#main.small {
+  height            : 100%;
+  width             : 100%;
+  max-width         : 420px;
+  border : 1px solid rgba( 255, 1, 1, 0);
+}
+
+
+#settings.small {
+  z-index        : 25;
+  position       : absolute;
+  bottom         : 0%;
+  left           : 0%;
+  width          : 100%;
+  height         : 100%;
+  overflow       : hidden;
+}
+
+#portal.small {
+  z-index        : 25;
+  position       : absolute;
+  top            : calc(100% - 45px);
+  left           : 0%;
+  width          : 45px;
+  height         : 45px;
+  background     : rgba( 144, 144, 144, 1 );
+  border-bottom-left-radius: 0%;
+  border-top-right-radius: 32%;
+}
+
+#settings-content.small {
+  position       : absolute;
+  top            : 100%;
+  left           : 0%;
+  width          : 100%;
+  bottom         : 40%;
+  min-height     : 230px;
+  height         : 40%;
+  overflow-x     : hidden;
+  overflow-y     : scroll;
+  backdrop-filter: blur(5px);
+  transition     : all 230ms;
+}
+.settings-item.small {
+  height         : 41px;
+  line-height    : 41px;
+  transform      : translate( 15px, 45px );
+}
+#settings-content.small .label {
+  font-family    : 'Montserrat';
+  font-size      : 15pt;
+  color          : rgba( 89, 89, 89, 1 );
+  line-height    : 43px;
+  width          : 210px;
+  display        : inline-block;
+  transform      : translate( 0px, 3px );
+}
+#settings-content.small .input {
+  font-family    : 'Montserrat';
+  font-size      : 15pt;
+  
+  color          : rgba( 89, 89, 89, 1 );
+  width          : 115px;
+  line-height    : 37px;
+  background     : none;
+  border         : none;
+  border-bottom  : 1px solid rgba( 67, 67, 67, 1 );
+  outline        : none;
+}
+#goal.small .input {
+  width          : 240px;
+}
