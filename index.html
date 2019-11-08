@@ -42,10 +42,11 @@
   
   
   $(document).ready(function() {
-    resize()
-   
     loadData()
     
+    sizeType = measure()
+    resize()
+   
     manageCalendar()
     manageGoal()
     
@@ -58,13 +59,43 @@
   
   resize = function() {
     var sizeType = sizeType || measure() || 0
-    sizeType = 1
+    // sizeType = 1
     switch(sizeType) {
       case 2:
+        $('#main').addClass('small')
+        $('body').addClass('small')
+        $('#settings').addClass('small')
+        $('#settings-content').addClass('small')
+        $('#settings-item').addClass('small')
+        $('#goal').addClass('small')
+        $('#portal').addClass('small')
+        
+        $('#input-start').datepicker('option', 'beforeShow', 
+          function(t, i) {
+            m = $( i.dpDiv ).outerWidth() - $( t ).outerWidth()
+            g = $( i.dpDiv ).outerWidth()
+            k = $( t ).offset()
+            if (k.left > g) {
+              i.dpDiv.css({ marginLeft: -m + 'px' })
+            } else {
+              i.dpDiv.css({ marginLeft: 0 })
+            }
+          }
+        )
+        $('#input-stop').datepicker('option', 'beforeShow', 
+          function(t, i) {
+            m = $( i.dpDiv ).outerWidth() - $( t ).outerWidth()
+            g = $( i.dpDiv ).outerWidth()
+            k = $( t ).offset()
+            if (k.left > g) {
+              i.dpDiv.css({ marginLeft: -m + 'px' })
+            } else {
+              i.dpDiv.css({ marginLeft: 0 })
+            }
+          }
+        )
         break;
       case 1:
-        $('#main').addClass('midsize')
-        break;
       case 0:
       default:
         break;
